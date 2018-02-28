@@ -16,12 +16,12 @@ cd ~/go/src/k8s.io/kubernetes
 git checkout feature/kubeadm_594-etcd_tls
 bazel test //cmd/kubeadm/...
 make WHAT=cmd/kubeadm KUBE_BUILD_PLATFORMS=linux/amd64
-issue=594 ./copy_kubeadm_bin.sh
+issue=594 ~/Repos/vagrant-kubeadm-testing/copy_kubeadm_bin.sh
 
 git checkout feature/kubeadm_710-etcd-ca
 bazel test //cmd/kubeadm/...
 make WHAT=cmd/kubeadm KUBE_BUILD_PLATFORMS=linux/amd64
-issue=710 ./copy_kubeadm_bin.sh
+issue=710 ~/Repos/vagrant-kubeadm-testing/copy_kubeadm_bin.sh
 ```
 #### experiment with the two builds on the vagrant:
 ```shell
