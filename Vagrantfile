@@ -15,11 +15,12 @@ Vagrant.configure("2") do |config|
     echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list
     apt-get update && apt-get install -y \
       docker.io=1.13.1-0ubuntu6 \
-      kubelet=1.9.7-00 \
-      kubectl=1.9.7-00 \
-      kubeadm=1.9.7-00
+      kubelet=1.11.0-00 \
+      kubectl=1.11.0-00 \
+      kubeadm=1.11.0-00
     
     swapoff -a
+    sed -i /swap/d /etc/fstab
     systemctl enable docker.service
 
     export KUBECONFIG=/etc/kubernetes/admin.conf
